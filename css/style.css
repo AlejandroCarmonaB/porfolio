@@ -19,12 +19,12 @@ html{
 }
 
 body{
-  margin:0;
-  font-family:var(--fuente-texto);
-  background:var(--fondo);
-  color:var(--texto);
-  padding-top:0;
-  padding-bottom:64px;
+  margin: 0;
+  font-family: var(--fuente-texto);
+  background: var(--fondo);
+  color: var(--texto);
+  padding-top: 74px;
+  padding-bottom: 64px;
 }
 
 
@@ -37,10 +37,10 @@ body{
 }
 
 .cabecera{
-  position:relative;
-  min-height:100vh;
-  margin-top:0;
-  overflow:visible;
+  position: relative;
+  min-height: calc(100vh - 74px);
+  margin-top: -74px;
+  overflow: visible;
 }
 
 
@@ -65,14 +65,19 @@ body{
   mix-blend-mode:screen;
 }
 
-.cabecera > *:not(.fondo-hero){
-  position:relative;
-  z-index:2;
+.cabecera{
+  position: relative;
+  min-height: calc(100vh - 74px);
+  margin-top: -74px;
+  overflow: visible;
+  z-index: 1;
 }
 
+
 .barra-navegacion{
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
   width: 100%;
   background: rgba(12,18,35,.85);
   backdrop-filter: blur(12px);
@@ -80,8 +85,9 @@ body{
   display: flex;
   justify-content: center;
   padding: 1rem;
-  z-index: 100;
+  z-index: 9999; /* 🔥 MÁS ALTO QUE EL HERO */
 }
+
 
 
 
@@ -118,6 +124,9 @@ body{
 }
 
 .hero{
+  position: relative;
+  z-index: 3;
+
   max-width:1100px;
   margin:auto;
   padding:4rem 1rem;
@@ -125,6 +134,7 @@ body{
   grid-template-columns:1fr 1fr;
   gap:2rem;
 }
+
 
 .hero__media{
   display:flex;
@@ -140,6 +150,7 @@ body{
     0 0 0 1px rgba(110,168,255,.15);
   transition:transform .3s ease, box-shadow .3s ease;
 }
+
 
 .foto:hover{
   transform:translateY(-4px);

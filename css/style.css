@@ -350,7 +350,7 @@ body{
     display:none;
   }
 
-  /* CUANDO EL CHECKBOX ESTÁ MARCADO */
+  
   .nav-toggle:checked + .toggle-menu + .menu{
     display:flex;
   }
